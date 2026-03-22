@@ -3,7 +3,7 @@
    Section number: 06
    ============================================================ */
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Mail, Linkedin, Github, MapPin, Phone } from "lucide-react";
+import { Mail, Linkedin, Github, MapPin } from "lucide-react";
 
 const contactItems = [
   {
@@ -23,12 +23,6 @@ const contactItems = [
     label: "GitHub",
     value: "github.com/akankshamattoo",
     href: "https://github.com/akankshamattoo",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "(206) 277-7560",
-    href: "tel:+12062777560",
   },
   {
     icon: MapPin,
@@ -70,7 +64,7 @@ export default function Contact() {
                 I'm currently open to data engineering and data science roles, internships, and research collaborations. Whether you have a project in mind, a role that fits, or just want to connect — I'd love to hear from you.
               </p>
               <p className="text-sm leading-relaxed text-muted-foreground font-body">
-                I'm especially interested in roles that involve building scalable data infrastructure, applying ML to real-world problems, and working at the intersection of engineering and analytics.
+                I'm especially interested in roles that involve building scalable data infrastructure, applying DS to real-world problems, and working at the intersection of engineering and analytics.
               </p>
 
               {/* Availability badge */}

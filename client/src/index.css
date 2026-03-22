@@ -1,0 +1,261 @@
+/* ============================================================
+   DESIGN SYSTEM: "Warm Editorial"
+   Movement: Editorial / Architectural Digest meets Tech Portfolio
+   Colors: Warm cream bg, forest green primary, terracotta accent
+   Fonts: Playfair Display (display) + DM Sans (body) + JetBrains Mono (code)
+   Layout: Asymmetric, generous whitespace, oversized section numbers
+   ============================================================ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Warm Editorial Palette */
+  --background: oklch(0.985 0.006 80);           /* warm cream #FAF8F5 */
+  --foreground: oklch(0.18 0.01 65);             /* dark charcoal #1C1C1E */
+  --card: oklch(1 0 0);                           /* white */
+  --card-foreground: oklch(0.18 0.01 65);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.01 65);
+
+  /* Forest green primary */
+  --primary: oklch(0.32 0.08 155);               /* deep forest green #1A4A3A */
+  --primary-foreground: oklch(0.97 0.005 80);    /* near white */
+
+  /* Terracotta secondary */
+  --secondary: oklch(0.94 0.012 80);             /* light warm surface */
+  --secondary-foreground: oklch(0.25 0.01 65);
+
+  --muted: oklch(0.94 0.008 80);
+  --muted-foreground: oklch(0.55 0.012 65);
+
+  /* Terracotta accent */
+  --accent: oklch(0.62 0.12 42);                 /* terracotta #C4622D */
+  --accent-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.01 80);
+  --input: oklch(0.88 0.01 80);
+  --ring: oklch(0.32 0.08 155);
+
+  --chart-1: oklch(0.32 0.08 155);
+  --chart-2: oklch(0.62 0.12 42);
+  --chart-3: oklch(0.55 0.1 155);
+  --chart-4: oklch(0.75 0.1 42);
+  --chart-5: oklch(0.45 0.09 155);
+
+  --sidebar: oklch(0.97 0.006 80);
+  --sidebar-foreground: oklch(0.18 0.01 65);
+  --sidebar-primary: oklch(0.32 0.08 155);
+  --sidebar-primary-foreground: oklch(0.97 0.005 80);
+  --sidebar-accent: oklch(0.94 0.008 80);
+  --sidebar-accent-foreground: oklch(0.18 0.01 65);
+  --sidebar-border: oklch(0.88 0.01 80);
+  --sidebar-ring: oklch(0.32 0.08 155);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Editorial section number decoration */
+  .section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 7rem;
+    font-weight: 900;
+    line-height: 1;
+    color: oklch(0.88 0.01 80);
+    position: absolute;
+    top: -1.5rem;
+    left: -1rem;
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.02em;
+  }
+
+  /* Terracotta underline animation for nav links */
+  .nav-link {
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    color: oklch(0.18 0.01 65);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: oklch(0.62 0.12 42);
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  .nav-link:hover {
+    color: oklch(0.32 0.08 155);
+  }
+
+  /* Skill tag */
+  .skill-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: oklch(0.94 0.008 80);
+    color: oklch(0.32 0.08 155);
+    border: 1px solid oklch(0.88 0.01 80);
+    transition: all 0.2s ease;
+  }
+  .skill-tag:hover {
+    background-color: oklch(0.32 0.08 155);
+    color: oklch(0.97 0.005 80);
+    border-color: oklch(0.32 0.08 155);
+  }
+
+  /* Diamond divider */
+  .diamond-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: oklch(0.62 0.12 42);
+  }
+  .diamond-divider::before,
+  .diamond-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: oklch(0.88 0.01 80);
+  }
+
+  /* Scroll animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Project card hover */
+  .project-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px oklch(0.18 0.01 65 / 0.12);
+  }
+}
+
+/* Mono font utility */
+.font-mono-custom {
+  font-family: 'JetBrains Mono', monospace;
+}
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+.font-body {
+  font-family: 'DM Sans', sans-serif;
+}

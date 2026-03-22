@@ -162,7 +162,7 @@ export default defineConfig({
     },
   },
   envDir: path.resolve(import.meta.dirname),
-  base: process.env.GITHUB_ACTIONS ? "/akanksha-portfolio/" : "/",
+  base: process.env.GITHUB_ACTIONS ? "/akankshamattoo_portfolio/" : "/",
   root: path.resolve(import.meta.dirname, "client"),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),

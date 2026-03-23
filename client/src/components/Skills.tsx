@@ -72,8 +72,6 @@ const skillCategories = [
     skills: [
       "Cross-Functional Collaboration",
       "Problem-Solving",
-      "Decision-Making",
-      "Communication",
       "Leadership",
       "Stakeholder Management",
       "People Analytics",

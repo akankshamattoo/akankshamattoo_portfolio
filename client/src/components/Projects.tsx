@@ -55,9 +55,9 @@ const projects = [
     category: "GenAI",
   },
   {
-    title: "Cognitive Load Prediction Using Keystrokes",
+    title: "Cognitive Load Prediction Using Keystrokes - Hackathon 3rd Place",
     description:
-      "Trained an LSTM-KMeans hybrid model on 31M keystrokes to classify cognitive states and visualize UX friction points through a real-time dashboard for product stakeholders.",
+      "Analyzed and trained time-series keystroke data using LSTM-KMeans hybrid model to classify user cognitive load; developed a real-time visualization pipeline to display high/low-load trends during tasks.",
     tags: ["Python", "SQL", "Databricks", "LSTM"],
     link: true,
     featured: true,

@@ -8,7 +8,7 @@ const skillCategories = [
   {
     category: "Programming Languages",
     icon: "< />",
-    skills: ["Python", "SQL", "JavaScript", "HTML/CSS", "R"],
+    skills: ["Python", "SQL", "JavaScript", "R"],
     color: "primary",
   },
   {

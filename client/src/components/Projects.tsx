@@ -17,6 +17,7 @@ const projects = [
     link: true,
     featured: true,
     category: "Data Engineering",
+     githubUrl:"https://github.com/akankshamattoo/Fraud_Detection_Pipeline"
   },
   {
     title: "Flight Delay Analysis",
@@ -26,6 +27,7 @@ const projects = [
     link: true,
     featured: false,
     category: "Data Engineering",
+     githubUrl:"https://github.com/akankshamattoo/Flight-Delay-Pipeline"
   },
   {
     title: "Predictive Workforce Intelligence & Attrition Model",
@@ -35,6 +37,8 @@ const projects = [
     link: true,
     featured: true,
     category: "Machine Learning",
+     githubUrl: "https://github.com/akankshamattoo/Workforce-Attrition-Intelligence",
+     tableauUrl: "https://public.tableau.com/app/profile/akanksha.mattoo/viz/IBMHRAttritiondashboard/Dashboard2",
   },
   {
     title: "Global Industrial Data Recency Analysis",
@@ -46,15 +50,6 @@ const projects = [
     category: "Data Science",
   },
   {
-    title: "Movie Reviews Summary Generator",
-    description:
-      "Engineered an NLP tool to generate concise movie review summaries from titles using aspect extraction, powered by Gemini API and Keras.",
-    tags: ["Gemini API", "Gen AI", "Keras", "Spark"],
-    link: true,
-    featured: false,
-    category: "GenAI",
-  },
-  {
     title: "Cognitive Load Prediction Using Keystrokes - Hackathon 3rd Place",
     description:
       "Analyzed and trained time-series keystroke data using LSTM-KMeans hybrid model to classify user cognitive load; developed a real-time visualization pipeline to display high/low-load trends during tasks.",
@@ -62,6 +57,7 @@ const projects = [
     link: true,
     featured: true,
     category: "Machine Learning",
+     githubUrl:"https://github.com/akankshamattoo/Cognitive-Load-Prediction-Using-Keystrokes"
   },
 ];
 
@@ -72,7 +68,7 @@ const categoryColors: Record<string, string> = {
   "GenAI": "bg-purple-50 text-purple-700",
 };
 
-function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
+function ProjectCard({ project, index }: { project: (typeof projects)[0] & { githubUrl?: string; tableauUrl?: string }; index: number }) {
   const { ref, visible } = useScrollAnimation();
 
   return (
@@ -111,19 +107,31 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
 
         {/* Link */}
         {project.link && (
-          <div className="flex items-center gap-3 pt-3 border-t border-border">
-            <a
-              href="https://github.com/akankshamattoo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors font-body"
-            >
-              <Github size={13} />
-              View on GitHub
-            </a>
-            <ExternalLink size={13} className="text-border" />
-          </div>
-        )}
+  <div className="flex items-center gap-3 pt-3 border-t border-border">
+    {project.githubUrl && (
+      
+        href={project.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors font-body"
+      >
+        <Github size={13} />
+        GitHub
+      </a>
+    )}
+    {project.tableauUrl && (
+      
+        href={project.tableauUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-accent transition-colors font-body"
+      >
+        <ExternalLink size={13} />
+        Tableau
+      </a>
+    )}
+  </div>
+)}
       </div>
     </div>
   );

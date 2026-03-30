@@ -109,7 +109,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0] & { git
         {project.link && (
   <div className="flex items-center gap-3 pt-3 border-t border-border">
     {project.githubUrl && (
-      
+     <a
         href={project.githubUrl}
         target="_blank"
         rel="noopener noreferrer"
@@ -120,7 +120,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0] & { git
       </a>
     )}
     {project.tableauUrl && (
-      
+     <a
         href={project.tableauUrl}
         target="_blank"
         rel="noopener noreferrer"

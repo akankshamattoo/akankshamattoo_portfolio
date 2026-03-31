@@ -38,7 +38,7 @@ const projects = [
     featured: true,
     category: "Machine Learning",
      githubUrl: "https://github.com/akankshamattoo/Workforce-Attrition-Intelligence",
-     tableauUrl: "https://public.tableau.com/app/profile/akanksha.mattoo/viz/IBMHRAttritiondashboard/Dashboard2",
+     tableauUrl: "https://public.tableau.com/app/profile/akanksha.mattoo/viz/IBMHRAttritiondashboard/Attrition_Dashboard#1",
   },
   {
     title: "Global Industrial Data Recency Analysis",

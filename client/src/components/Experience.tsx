@@ -7,17 +7,17 @@ import { Calendar, MapPin } from "lucide-react";
 
 const experiences = [
   {
-    role: "Data Analyst",
-    company: "The Daily UW | Student Publications of University of Washington",
+    role: "Graduate Researcher",
+    company: "People Analytics Lab | University of Washington",
     location: "Seattle, USA",
     period: "Jan 2026 – Present",
     type: "Part-time",
     bullets: [
-      "Developed Tableau dashboards, integrating multiple data sources through ETL to deliver real-time customer insights.",
-      "Led A/B testing for customer segmentation models, reducing user drop-off by 5% QoQ by improving user retention strategies.",
-      "Presented key insights from dashboards, enabling data-driven decisions to enhance content engagement strategy.",
+      "Engineered a matched longitudinal dataset from multi-wave survey responses across 600+ employees designing the data integration and cleaning pipeline to handle missing values, temporal alignment, and feature construction for downstream predictivemodeling",
+      "Built and evaluated classification models (logistic regression, mixed feature types) with full diagnostic pipelines — selecting methods across ordinal, binary, and continuous variables to predict employee attrition and performance outcomes.",
+      "Developed reproducible, end-to-end analysis pipelines with documented preprocessing steps, modeling rationale, and validation outputs, enabling transparent handoff and clear communication of findings to non-technical stakeholders.",
     ],
-    tags: ["Tableau", "ETL", "A/B Testing", "Segmentation"],
+    tags: ["Machine Learning", "ETL", "A/B Testing", "EDA"],
     accent: "accent",
   },
   {
